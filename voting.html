@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cast Your Vote</title>
+
+    <link rel="stylesheet"
+          href="style2.css">
+
+</head>
+
+
+<body>
+
+
+<div class="voting-container">
+
+
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
+
+    <header class="voting-header">
+
+        <div>
+
+            <h1>
+                College Election
+            </h1>
+
+            <p>
+                Official Student Voting Portal
+            </p>
+
+        </div>
+
+
+        <!-- STUDENT INFORMATION -->
+
+        <div class="student-info">
+
+            <strong id="studentName">
+                Student
+            </strong>
+
+            <span id="studentDetails">
+                Program • Year Level
+            </span>
+
+        </div>
+
+
+        <!-- ELECTION STATUS -->
+
+        <div id="electionStatus"
+             class="election-status student-election-status">
+
+            Checking election status...
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         ELECTION COUNTDOWN
+    =================================================== -->
+
+    <section class="student-countdown-card"
+             id="votingCountdown">
+
+        <div class="countdown-header">
+
+            <div class="countdown-heading">
+
+                <span class="countdown-eyebrow">
+                    ELECTION COUNTDOWN
+                </span>
+
+                <h2 id="countdownTitle">
+                    Checking voting schedule...
+                </h2>
+
+            </div>
+
+
+            <div id="countdownStatusBadge"
+                 class="countdown-status-badge checking">
+
+                <span class="status-dot"></span>
+
+                <span id="countdownStatusText">
+                    CHECKING
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="countdown-time-grid">
+
+            <div class="countdown-unit">
+
+                <strong id="countdownDays">
+                    00
+                </strong>
+
+                <span>
+                    Days
+                </span>
+
+            </div>
+
+
+            <div class="countdown-separator">
+                :
+            </div>
+
+
+            <div class="countdown-unit">
+
+                <strong id="countdownHours">
+                    00
+                </strong>
+
+                <span>
+                    Hours
+                </span>
+
+            </div>
+
+
+            <div class="countdown-separator">
+                :
+            </div>
+
+
+            <div class="countdown-unit">
+
+                <strong id="countdownMinutes">
+                    00
+                </strong>
+
+                <span>
+                    Minutes
+                </span>
+
+            </div>
+
+
+            <div class="countdown-separator">
+                :
+            </div>
+
+
+            <div class="countdown-unit">
+
+                <strong id="countdownSeconds">
+                    00
+                </strong>
+
+                <span>
+                    Seconds
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="countdown-schedule">
+
+            <div class="schedule-item">
+
+                <span class="schedule-label">
+                    Voting starts
+                </span>
+
+                <strong id="countdownStart">
+                    Not scheduled
+                </strong>
+
+            </div>
+
+
+            <div class="schedule-divider"></div>
+
+
+            <div class="schedule-item schedule-end">
+
+                <span class="schedule-label">
+                    Voting ends
+                </span>
+
+                <strong id="countdownEnd">
+                    Not scheduled
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="countdown-progress-area">
+
+            <div class="countdown-progress-labels">
+
+                <span id="countdownProgressLabel">
+                    Voting period progress
+                </span>
+
+                <strong id="countdownProgressPercent">
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="countdown-progress-track">
+
+                <div id="countdownProgressBar"
+                     class="countdown-progress-bar">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p id="countdownMessage"
+           class="countdown-message">
+
+            Checking voting schedule...
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         VOTING PROGRESS
+    =================================================== -->
+
+    <div class="progress-container">
+
+
+        <div class="progress-step active"
+             id="progressPresident">
+
+            1
+
+            <span>
+                President
+            </span>
+
+        </div>
+
+
+        <div class="progress-line"></div>
+
+
+        <div class="progress-step"
+             id="progressVicePresident">
+
+            2
+
+            <span>
+                Vice President
+            </span>
+
+        </div>
+
+
+        <div class="progress-line"></div>
+
+
+        <div class="progress-step"
+             id="progressSecretary">
+
+            3
+
+            <span>
+                Secretary
+            </span>
+
+        </div>
+
+
+        <div class="progress-line"></div>
+
+
+        <div class="progress-step"
+             id="progressReview">
+
+            4
+
+            <span>
+                Review
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         MAIN VOTING CARD
+    =================================================== -->
+
+    <main class="position-card">
+
+
+        <!-- POSITION HEADER -->
+
+        <div class="position-header">
+
+            <span class="position-number"
+                  id="positionNumber">
+
+                Position 1 of 3
+
+            </span>
+
+
+            <h2 id="positionTitle">
+
+                President
+
+            </h2>
+
+
+            <p id="positionInstruction">
+
+                Select <strong>one</strong>
+                candidate for President.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             PRESIDENT CANDIDATES
+
+             IMPORTANT:
+             Candidates are loaded automatically from:
+             localStorage["candidates"]
+        =================================================== -->
+
+        <div class="candidate-grid"
+             id="presidentCandidates">
+
+            <!-- Admin candidates will appear here -->
+
+        </div>
+
+
+
+        <!-- ==================================================
+             VICE PRESIDENT CANDIDATES
+        =================================================== -->
+
+        <div class="candidate-grid"
+             id="vicePresidentCandidates"
+             style="display: none;">
+
+            <!-- Admin candidates will appear here -->
+
+        </div>
+
+
+
+        <!-- ==================================================
+             SECRETARY CANDIDATES
+        =================================================== -->
+
+        <div class="candidate-grid"
+             id="secretaryCandidates"
+             style="display: none;">
+
+            <!-- Admin candidates will appear here -->
+
+        </div>
+
+
+
+        <!-- ==================================================
+             REVIEW SECTION
+        =================================================== -->
+
+        <div id="reviewSection"
+             class="review-section"
+             style="display: none;">
+
+
+            <div class="review-list">
+
+
+                <div class="review-item">
+
+                    <strong>
+                        President
+                    </strong>
+
+                    <span id="reviewPresident">
+                        Not selected
+                    </span>
+
+                </div>
+
+
+                <div class="review-item">
+
+                    <strong>
+                        Vice President
+                    </strong>
+
+                    <span id="reviewVicePresident">
+                        Not selected
+                    </span>
+
+                </div>
+
+
+                <div class="review-item">
+
+                    <strong>
+                        Secretary
+                    </strong>
+
+                    <span id="reviewSecretary">
+                        Not selected
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             SELECTION ERROR
+        =================================================== -->
+
+        <p id="selectionError"
+           class="selection-error">
+        </p>
+
+
+
+        <!-- ==================================================
+             NAVIGATION
+        =================================================== -->
+
+        <div class="voting-navigation">
+
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="backButton"
+                onclick="goBack()">
+
+                ← Back
+
+            </button>
+
+
+            <button
+                type="button"
+                class="primary-button next-button"
+                id="nextButton"
+                onclick="goNext()">
+
+                Next →
+
+            </button>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <footer class="voting-footer">
+
+        <p>
+            Your vote is private and can only be submitted once.
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     STUDENT JAVASCRIPT
+=================================================== -->
+
+<script src="student2.js"></script>
+
+
+</body>
+
+</html>
+

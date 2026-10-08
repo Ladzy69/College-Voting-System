@@ -1,0 +1,1189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="admin-style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="admin-header">
+
+        <div class="header-left">
+
+            <div class="admin-logo">
+                🗳️
+            </div>
+
+            <div>
+
+                <h1>
+                    College Voting System
+                </h1>
+
+                <p>
+                    Administrator Dashboard
+                </p>
+
+            </div>
+
+        </div>
+
+        <button
+            id="logoutButton"
+            class="logout-button"
+            type="button"
+        >
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN DASHBOARD
+    ====================================================== -->
+
+    <main class="dashboard-content">
+
+
+        <!-- =================================================
+             DASHBOARD OVERVIEW
+        ================================================== -->
+
+        <div class="welcome-section">
+
+            <div>
+
+                <h2>
+                    Dashboard Overview
+                </h2>
+
+                <p>
+                    Monitor the current election and voting activity.
+                </p>
+
+            </div>
+
+            <button
+                id="refreshButton"
+                class="refresh-button"
+                type="button"
+            >
+                ↻ Refresh Data
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section class="statistics-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div class="stat-information">
+
+                    <span class="stat-label">
+                        Total Students
+                    </span>
+
+                    <strong id="totalStudents">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🗳️
+                </div>
+
+                <div class="stat-information">
+
+                    <span class="stat-label">
+                        Total Votes
+                    </span>
+
+                    <strong id="totalVotes">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✅
+                </div>
+
+                <div class="stat-information">
+
+                    <span class="stat-label">
+                        Voted
+                    </span>
+
+                    <strong id="votedStudents">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⏳
+                </div>
+
+                <div class="stat-information">
+
+                    <span class="stat-label">
+                        Not Yet Voted
+                    </span>
+
+                    <strong id="notVotedStudents">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ELECTION RESULTS
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Election Results
+                    </h2>
+
+                    <p>
+                        Current vote count for each position.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="results-grid">
+
+
+                <!-- PRESIDENT -->
+
+                <div class="result-card">
+
+                    <div class="result-title">
+
+                        <span class="position-icon">
+                            🏆
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                President
+                            </h3>
+
+                            <p>
+                                Candidate vote count
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="presidentResults"
+                        class="candidate-results"
+                    ></div>
+
+                </div>
+
+
+                <!-- VICE PRESIDENT -->
+
+                <div class="result-card">
+
+                    <div class="result-title">
+
+                        <span class="position-icon">
+                            🏆
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Vice President
+                            </h3>
+
+                            <p>
+                                Candidate vote count
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="vicePresidentResults"
+                        class="candidate-results"
+                    ></div>
+
+                </div>
+
+
+                <!-- SECRETARY -->
+
+                <div class="result-card">
+
+                    <div class="result-title">
+
+                        <span class="position-icon">
+                            🏆
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Secretary
+                            </h3>
+
+                            <p>
+                                Candidate vote count
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="secretaryResults"
+                        class="candidate-results"
+                    ></div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ELECTION WINNERS
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        🏆 Election Winners
+                    </h2>
+
+                    <p>
+                        Current leading candidates based on submitted votes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="winners-grid">
+
+
+                <!-- PRESIDENT WINNER -->
+
+                <div class="winner-card">
+
+                    <div class="winner-icon">
+                        🏆
+                    </div>
+
+                    <div class="winner-position">
+                        President
+                    </div>
+
+                    <h3 id="presidentWinner">
+                        No votes yet
+                    </h3>
+
+                    <p id="presidentWinnerVotes">
+                        0 votes
+                    </p>
+
+                </div>
+
+
+                <!-- VICE PRESIDENT WINNER -->
+
+                <div class="winner-card">
+
+                    <div class="winner-icon">
+                        🏆
+                    </div>
+
+                    <div class="winner-position">
+                        Vice President
+                    </div>
+
+                    <h3 id="vicePresidentWinner">
+                        No votes yet
+                    </h3>
+
+                    <p id="vicePresidentWinnerVotes">
+                        0 votes
+                    </p>
+
+                </div>
+
+
+                <!-- SECRETARY WINNER -->
+
+                <div class="winner-card">
+
+                    <div class="winner-icon">
+                        🏆
+                    </div>
+
+                    <div class="winner-position">
+                        Secretary
+                    </div>
+
+                    <h3 id="secretaryWinner">
+                        No votes yet
+                    </h3>
+
+                    <p id="secretaryWinnerVotes">
+                        0 votes
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- TURNOUT -->
+
+            <div class="turnout-card">
+
+                <div>
+
+                    <h3>
+                        Voter Turnout
+                    </h3>
+
+                    <p>
+                        Percentage of registered students who have voted.
+                    </p>
+
+                </div>
+
+                <div
+                    class="turnout-number"
+                    id="turnoutPercentage"
+                >
+                    0%
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CANDIDATE MANAGEMENT
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Candidate Management
+                    </h2>
+
+                    <p>
+                        Add, edit, or remove candidates participating in the election.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADD CANDIDATE -->
+
+            <div class="candidate-add-card">
+
+                <div class="candidate-add-header">
+
+                    <div class="candidate-add-icon">
+                        +
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Add New Candidate
+                        </h3>
+
+                        <p>
+                            Enter the candidate information below.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="candidate-add-form">
+
+
+                    <div class="candidate-form-group">
+
+                        <label for="candidatePosition">
+                            Election Position
+                        </label>
+
+                        <select
+                            id="candidatePosition"
+                            class="candidate-form-control"
+                        >
+
+                            <option value="">
+                                Select position
+                            </option>
+
+                            <option value="president">
+                                President
+                            </option>
+
+                            <option value="vicePresident">
+                                Vice President
+                            </option>
+
+                            <option value="secretary">
+                                Secretary
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="candidate-form-group">
+
+                        <label for="candidateName">
+                            Candidate Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="candidateName"
+                            class="candidate-form-control"
+                            placeholder="Enter candidate name"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="candidate-form-action">
+
+                        <button
+                            type="button"
+                            id="addCandidateButton"
+                            class="add-candidate-button"
+                        >
+                            + Add Candidate
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- CANDIDATE LISTS -->
+
+            <div class="candidate-management-grid">
+
+
+                <!-- PRESIDENT -->
+
+                <div class="candidate-management-card">
+
+                    <div class="management-title">
+
+                        <span>
+                            🏆
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                President
+                            </h3>
+
+                            <p>
+                                Candidates
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="adminPresidentCandidates"
+                        class="admin-candidate-list"
+                    ></div>
+
+                </div>
+
+
+                <!-- VICE PRESIDENT -->
+
+                <div class="candidate-management-card">
+
+                    <div class="management-title">
+
+                        <span>
+                            🏆
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Vice President
+                            </h3>
+
+                            <p>
+                                Candidates
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="adminVicePresidentCandidates"
+                        class="admin-candidate-list"
+                    ></div>
+
+                </div>
+
+
+                <!-- SECRETARY -->
+
+                <div class="candidate-management-card">
+
+                    <div class="management-title">
+
+                        <span>
+                            🏆
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Secretary
+                            </h3>
+
+                            <p>
+                                Candidates
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="adminSecretaryCandidates"
+                        class="admin-candidate-list"
+                    ></div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ELECTION MANAGEMENT
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        🗳️ Election Management
+                    </h2>
+
+                    <p>
+                        Control the election status and voting schedule.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="election-management-card">
+
+
+                <!-- STATUS -->
+
+                <div class="election-status-information">
+
+                    <div class="election-status-icon">
+                        🗳️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Election Status
+                        </h3>
+
+                        <p id="electionStatusText">
+                            Election is currently closed.
+                            Students cannot vote.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="electionStatusBadge"
+                    class="election-status-badge closed"
+                >
+                    CLOSED
+                </div>
+
+
+                <!-- OPEN / CLOSE -->
+
+                <div class="election-actions">
+
+                    <button
+                        id="openElectionButton"
+                        class="election-button open-election-button"
+                        type="button"
+                    >
+                        🟢 Open Election
+                    </button>
+
+                    <button
+                        id="closeElectionButton"
+                        class="election-button close-election-button"
+                        type="button"
+                    >
+                        🔴 Close Election
+                    </button>
+
+                </div>
+
+
+                <!-- VOTING SCHEDULE -->
+
+                <div class="voting-schedule-card">
+
+                    <div class="schedule-header">
+
+                        <div>
+
+                            <h3>
+                                ⏰ Voting Schedule
+                            </h3>
+
+                            <p>
+                                Set the date and time when students can vote.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-form">
+
+
+                        <div class="schedule-group">
+
+                            <label for="votingStartDate">
+                                Voting Start Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="votingStartDate"
+                            >
+
+                        </div>
+
+
+                        <div class="schedule-group">
+
+                            <label for="votingStartTime">
+                                Voting Start Time
+                            </label>
+
+                            <input
+                                type="time"
+                                id="votingStartTime"
+                            >
+
+                        </div>
+
+
+                        <div class="schedule-group">
+
+                            <label for="votingEndDate">
+                                Voting End Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="votingEndDate"
+                            >
+
+                        </div>
+
+
+                        <div class="schedule-group">
+
+                            <label for="votingEndTime">
+                                Voting End Time
+                            </label>
+
+                            <input
+                                type="time"
+                                id="votingEndTime"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="schedule-buttons">
+
+                        <button
+                            id="setVotingScheduleButton"
+                            class="admin-button success-button"
+                            type="button"
+                        >
+                            📅 Set Voting Schedule
+                        </button>
+
+                        <button
+                            id="clearVotingScheduleButton"
+                            class="admin-button danger-button"
+                            type="button"
+                        >
+                            🗑️ Clear Schedule
+                        </button>
+
+                    </div>
+
+
+                    <!-- CURRENT SCHEDULE -->
+
+                    <div class="current-schedule">
+
+                        <h3>
+                            Current Voting Schedule
+                        </h3>
+
+                        <div class="schedule-details">
+
+                            <div class="schedule-detail-item">
+
+                                <span class="schedule-label">
+                                    Starts:
+                                </span>
+
+                                <strong id="currentStartSchedule">
+                                    Not scheduled
+                                </strong>
+
+                            </div>
+
+
+                            <div class="schedule-detail-item">
+
+                                <span class="schedule-label">
+                                    Ends:
+                                </span>
+
+                                <strong id="currentEndSchedule">
+                                    Not scheduled
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COUNTDOWN -->
+
+                    <div
+                        id="adminVotingCountdown"
+                        class="admin-countdown"
+                    >
+
+                        <div class="countdown-title">
+                            Voting Countdown
+                        </div>
+
+                        <div
+                            id="adminCountdownTime"
+                            class="countdown-time"
+                        >
+                            --:--:--
+                        </div>
+
+                        <div
+                            id="adminCountdownMessage"
+                            class="countdown-message"
+                        >
+                            No voting schedule has been set.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VOTER RECORDS
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Voter Records
+                    </h2>
+
+                    <p>
+                        Students who have submitted their votes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                #
+                            </th>
+
+                            <th>
+                                Student ID
+                            </th>
+
+                            <th>
+                                Student Name
+                            </th>
+
+                            <th>
+                                Date Submitted
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="voterTableBody"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ADMIN CONTROLS
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Admin Controls
+                    </h2>
+
+                    <p>
+                        Manage the election system, testing data,
+                        and system backups.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-controls">
+
+
+                <!-- REFRESH -->
+
+                <div class="control-card">
+
+                    <div class="control-icon">
+                        🔄
+                    </div>
+
+                    <div class="control-information">
+
+                        <h3>
+                            Refresh Dashboard
+                        </h3>
+
+                        <p>
+                            Update the dashboard with the latest voting information.
+                        </p>
+
+                    </div>
+
+                    <button
+                        id="controlRefreshButton"
+                        class="control-button"
+                        type="button"
+                    >
+                        Refresh
+                    </button>
+
+                </div>
+
+
+                <!-- RESET -->
+
+                <div class="control-card danger-control">
+
+                    <div class="control-icon">
+                        🗑️
+                    </div>
+
+                    <div class="control-information">
+
+                        <h3>
+                            Reset Voting Data
+                        </h3>
+
+                        <p>
+                            Delete all submitted votes from this browser for testing.
+                        </p>
+
+                    </div>
+
+                    <button
+                        id="resetVotesButton"
+                        class="control-button danger-button"
+                        type="button"
+                    >
+                        Reset Votes
+                    </button>
+
+                </div>
+
+
+                <!-- EXPORT -->
+
+                <div class="control-card">
+
+                    <div class="control-icon">
+                        💾
+                    </div>
+
+                    <div class="control-information">
+
+                        <h3>
+                            Backup System Data
+                        </h3>
+
+                        <p>
+                            Export the current students, candidates, votes,
+                            voting schedule, and election settings.
+                        </p>
+
+                    </div>
+
+                    <button
+                        id="exportDataButton"
+                        class="control-button"
+                        type="button"
+                    >
+                        📥 Export Data
+                    </button>
+
+                </div>
+
+
+                <!-- IMPORT -->
+
+                <div class="control-card">
+
+                    <div class="control-icon">
+                        📤
+                    </div>
+
+                    <div class="control-information">
+
+                        <h3>
+                            Restore System Data
+                        </h3>
+
+                        <p>
+                            Import a previously exported College Voting
+                            System backup file.
+                        </p>
+
+                    </div>
+
+                    <button
+                        id="importDataButton"
+                        class="control-button"
+                        type="button"
+                    >
+                        📤 Import Data
+                    </button>
+
+                    <input
+                        type="file"
+                        id="importDataFile"
+                        accept=".json,application/json"
+                        style="display: none;"
+                    >
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="admin-footer">
+
+        <p>
+            College Voting System &copy; 2026
+        </p>
+
+        <span>
+            Administrator Portal
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script src="admin-dashboard.js"></script>
+
+</body>
+
+</html>
+

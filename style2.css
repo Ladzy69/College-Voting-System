@@ -1,0 +1,2519 @@
+/* =========================================================
+   COLLEGE VOTING SYSTEM
+   STUDENT VOTING PAGE - STYLE2.CSS
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background: #f3f7f4;
+    color: #24352d;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   2. COLOR VARIABLES
+   ========================================================= */
+
+:root {
+    --forest: #1f5d42;
+    --forest-dark: #174832;
+    --forest-deep: #123b2a;
+    --forest-light: #e7f2eb;
+    --forest-soft: #f1f8f4;
+
+    --white: #ffffff;
+    --text: #24352d;
+    --muted: #6d7d74;
+
+    --border: #d8e3dc;
+    --border-dark: #c4d3ca;
+
+    --success: #2e8b57;
+    --success-light: #e9f7ef;
+
+    --warning: #c78a19;
+    --warning-light: #fff6df;
+
+    --danger: #c84b4b;
+    --danger-light: #fff0f0;
+
+    --shadow-sm: 0 3px 10px rgba(31, 93, 66, 0.08);
+    --shadow-md: 0 8px 24px rgba(31, 93, 66, 0.12);
+    --shadow-lg: 0 14px 35px rgba(31, 93, 66, 0.15);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+}
+
+
+/* =========================================================
+   3. MAIN VOTING CONTAINER
+   ========================================================= */
+
+.voting-container {
+    width: min(1180px, calc(100% - 32px));
+    margin: 30px auto;
+    padding-bottom: 30px;
+}
+
+
+/* =========================================================
+   4. HEADER
+   ========================================================= */
+
+.voting-header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 24px;
+
+    background: var(--forest);
+    color: var(--white);
+
+    padding: 25px 30px;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* College title */
+
+.voting-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 3px;
+}
+
+.voting-header > div:first-child p {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   5. STUDENT INFORMATION
+   ========================================================= */
+
+.student-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    min-width: 190px;
+
+    padding: 10px 16px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.student-info strong {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.student-info span {
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   6. ELECTION STATUS
+   ========================================================= */
+
+.election-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 120px;
+
+    padding: 9px 15px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    background: rgba(255, 255, 255, 0.13);
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* JavaScript-added states */
+
+.election-status.open {
+    background: rgba(61, 180, 111, 0.22);
+    border-color: rgba(126, 235, 164, 0.4);
+    color: #eafff1;
+}
+
+.election-status.closed {
+    background: rgba(255, 255, 255, 0.12);
+    color: #f1f4f2;
+}
+
+
+/* =========================================================
+   7. COUNTDOWN CARD
+   ========================================================= */
+
+.student-countdown-card {
+    margin-top: 22px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    padding: 25px;
+
+    box-shadow: var(--shadow-sm);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.student-countdown-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   8. COUNTDOWN HEADER
+   ========================================================= */
+
+.countdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+.countdown-eyebrow {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--forest);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+.countdown-heading h2 {
+    color: var(--text);
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   9. COUNTDOWN STATUS BADGE
+   ========================================================= */
+
+.countdown-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+
+    white-space: nowrap;
+
+    background: #eef2ef;
+    color: var(--muted);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #8c9992;
+}
+
+
+/* Checking */
+
+.countdown-status-badge.checking {
+    background: #eef2ef;
+    color: #68766f;
+}
+
+.countdown-status-badge.checking .status-dot {
+    background: #8c9992;
+}
+
+
+/* Open */
+
+.countdown-status-badge.open {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.countdown-status-badge.open .status-dot {
+    background: var(--success);
+    box-shadow: 0 0 0 4px rgba(46, 139, 87, 0.12);
+}
+
+
+/* Upcoming */
+
+.countdown-status-badge.upcoming {
+    background: #edf3ff;
+    color: #3766a8;
+}
+
+.countdown-status-badge.upcoming .status-dot {
+    background: #4d7bc0;
+}
+
+
+/* Closed */
+
+.countdown-status-badge.closed {
+    background: var(--danger-light);
+    color: var(--danger);
+}
+
+.countdown-status-badge.closed .status-dot {
+    background: var(--danger);
+}
+
+
+/* =========================================================
+   10. COUNTDOWN TIME
+   ========================================================= */
+
+.countdown-time-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 20px;
+
+    background: var(--forest-soft);
+
+    border: 1px solid #dcebe2;
+
+    border-radius: 15px;
+}
+
+
+/* Individual number box */
+
+.countdown-unit {
+    min-width: 0;
+
+    text-align: center;
+
+    padding: 10px 5px;
+}
+
+.countdown-unit strong {
+    display: block;
+
+    color: var(--forest);
+
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+
+    line-height: 1;
+
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 1px;
+}
+
+.countdown-unit span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+
+/* Separators */
+
+.countdown-separator {
+    color: #91a39a;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    padding-bottom: 16px;
+}
+
+
+/* =========================================================
+   11. COUNTDOWN SCHEDULE
+   ========================================================= */
+
+.countdown-schedule {
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin-top: 20px;
+
+    padding: 17px 20px;
+
+    background: #fafcfb;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+.schedule-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.schedule-item.schedule-end {
+    text-align: right;
+}
+
+.schedule-label {
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.schedule-item strong {
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.schedule-divider {
+    width: 1px;
+    height: 35px;
+
+    background: var(--border);
+}
+
+
+/* =========================================================
+   12. COUNTDOWN PROGRESS
+   ========================================================= */
+
+.countdown-progress-area {
+    margin-top: 20px;
+}
+
+.countdown-progress-labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 8px;
+}
+
+.countdown-progress-labels span {
+    color: var(--muted);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.countdown-progress-labels strong {
+    color: var(--forest);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.countdown-progress-track {
+    width: 100%;
+    height: 8px;
+
+    overflow: hidden;
+
+    background: #e4ebe7;
+
+    border-radius: 999px;
+}
+
+.countdown-progress-bar {
+    width: 0;
+    height: 100%;
+
+    background: var(--forest);
+
+    border-radius: inherit;
+
+    transition: width 0.5s ease;
+}
+
+
+/* =========================================================
+   13. COUNTDOWN MESSAGE
+   ========================================================= */
+
+.countdown-message {
+    margin-top: 13px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   14. VOTING PROGRESS
+   ========================================================= */
+
+.progress-container {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 25px 0;
+
+    padding: 5px 10px;
+}
+
+
+/* Progress step */
+
+.progress-step {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: #e2e9e5;
+
+    color: #75837c;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.progress-step span {
+    position: absolute;
+
+    top: 51px;
+
+    width: 110px;
+
+    color: #78867e;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* Active */
+
+.progress-step.active {
+    background: var(--forest);
+    color: white;
+
+    box-shadow: 0 0 0 5px rgba(31, 93, 66, 0.12);
+
+    transform: scale(1.04);
+}
+
+.progress-step.active span {
+    color: var(--forest);
+}
+
+
+/* Completed */
+
+.progress-step.completed {
+    background: var(--success);
+    color: white;
+}
+
+.progress-step.completed span {
+    color: var(--success);
+}
+
+
+/* Progress line */
+
+.progress-line {
+    flex: 1;
+
+    height: 3px;
+
+    margin: 0 7px;
+
+    background: #dfe7e2;
+
+    border-radius: 999px;
+
+    transition: background 0.3s ease;
+}
+
+.progress-line.completed {
+    background: var(--forest);
+}
+
+
+/* =========================================================
+   15. MAIN POSITION CARD
+   ========================================================= */
+
+.position-card {
+    margin-top: 42px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   16. POSITION HEADER
+   ========================================================= */
+
+.position-header {
+    padding: 28px 30px 22px;
+
+    border-bottom: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff,
+            #fbfdfc
+        );
+}
+
+.position-number {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    color: var(--forest);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.position-header h2 {
+    color: var(--text);
+
+    font-size: 27px;
+    font-weight: 750;
+
+    margin-bottom: 5px;
+}
+
+.position-header p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.position-header p strong {
+    color: var(--forest);
+}
+
+
+/* =========================================================
+   17. CANDIDATE GRID
+   ========================================================= */
+
+.candidate-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    padding: 26px 30px;
+}
+
+
+/* =========================================================
+   18. CANDIDATE CARD
+   ========================================================= */
+
+.candidate-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 20px;
+
+    background: var(--white);
+
+    border: 2px solid var(--border);
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.candidate-card:hover {
+    border-color: #a9c5b5;
+
+    background: #fcfefd;
+
+    box-shadow: var(--shadow-md);
+
+    transform: translateY(-3px);
+}
+
+.candidate-card:focus {
+    outline: none;
+
+    border-color: var(--forest);
+
+    box-shadow:
+        0 0 0 4px rgba(31, 93, 66, 0.12),
+        var(--shadow-sm);
+}
+
+
+/* Selected card */
+
+.candidate-card.selected {
+    border-color: var(--forest);
+
+    background: var(--forest-soft);
+
+    box-shadow:
+        0 7px 20px rgba(31, 93, 66, 0.13);
+}
+
+
+/* =========================================================
+   19. CANDIDATE PHOTO
+   ========================================================= */
+
+.candidate-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: var(--forest-light);
+
+    border: 4px solid #d9ebe1;
+
+    font-size: 38px;
+
+    flex-shrink: 0;
+}
+
+
+/* Selected photo */
+
+.candidate-card.selected .candidate-photo {
+    background: #d9eee1;
+    border-color: #b7d8c4;
+}
+
+
+/* =========================================================
+   20. CANDIDATE INFORMATION
+   ========================================================= */
+
+.candidate-information {
+    min-width: 0;
+
+    text-align: center;
+
+    padding: 0 3px;
+}
+
+.candidate-information h3 {
+    overflow: hidden;
+
+    color: var(--text);
+
+    font-size: 17px;
+    font-weight: 750;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    margin-bottom: 4px;
+}
+
+.candidate-information > p:not(.platform) {
+    color: var(--forest);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.candidate-information .platform {
+    min-height: 52px;
+
+    margin-top: 11px;
+
+    padding-top: 11px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   21. SELECTION CIRCLE
+   ========================================================= */
+
+.selection-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 29px;
+    height: 29px;
+
+    margin: 17px auto 0;
+
+    border: 2px solid #c7d5cd;
+
+    border-radius: 50%;
+
+    color: transparent;
+
+    background: white;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Selected circle */
+
+.candidate-card.selected .selection-circle {
+    background: var(--forest);
+
+    border-color: var(--forest);
+
+    color: white;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   22. REVIEW SECTION
+   ========================================================= */
+
+.review-section {
+    padding: 28px 30px;
+}
+
+.review-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.review-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 17px 20px;
+
+    background: #f8fbf9;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+.review-item strong {
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+.review-item span {
+    color: var(--forest);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   23. SELECTION ERROR
+   ========================================================= */
+
+.selection-error {
+    display: none;
+
+    margin: 0 30px 20px;
+
+    padding: 11px 14px;
+
+    background: var(--danger-light);
+
+    border: 1px solid #efcaca;
+
+    border-radius: 9px;
+
+    color: var(--danger);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.selection-error:not(:empty) {
+    display: block;
+}
+
+
+/* =========================================================
+   24. NAVIGATION
+   ========================================================= */
+
+.voting-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 22px 30px;
+
+    border-top: 1px solid var(--border);
+
+    background: #fafcfb;
+}
+
+
+/* =========================================================
+   25. BUTTONS
+   ========================================================= */
+
+.voting-navigation button {
+    min-height: 44px;
+
+    padding: 10px 21px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+.voting-navigation button:hover {
+    transform: translateY(-1px);
+}
+
+.voting-navigation button:active {
+    transform: translateY(0);
+}
+
+.voting-navigation button:focus {
+    outline: none;
+
+    box-shadow: 0 0 0 4px rgba(31, 93, 66, 0.12);
+}
+
+
+/* Back */
+
+.secondary-button {
+    background: white;
+
+    color: var(--forest);
+
+    border: 1px solid var(--border-dark);
+}
+
+.secondary-button:hover {
+    background: var(--forest-soft);
+
+    border-color: #a9c5b5;
+}
+
+
+/* Next */
+
+.primary-button {
+    background: var(--forest);
+
+    color: white;
+
+    border: 1px solid var(--forest);
+
+    box-shadow: 0 4px 10px rgba(31, 93, 66, 0.15);
+}
+
+.primary-button:hover {
+    background: var(--forest-dark);
+
+    border-color: var(--forest-dark);
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   26. FOOTER
+   ========================================================= */
+
+.voting-footer {
+    padding: 22px 10px 5px;
+
+    text-align: center;
+}
+
+.voting-footer p {
+    color: #7c8b83;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   27. LOGIN PAGE SUPPORT
+   =========================================================
+   These styles allow the same style2.css to continue
+   supporting the student login page.
+   ========================================================= */
+
+/* =========================================================
+   27. LOGIN PAGE - CENTERED STUDENT ID FORM
+   ========================================================= */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef6f1,
+            #f7faf8
+        );
+}
+
+
+/* Main login wrapper */
+
+.login-container {
+    width: 100%;
+    max-width: 430px;
+
+    margin: 0 auto;
+}
+
+
+/* Login card */
+
+.login-card {
+    width: 100%;
+
+    background: var(--white);
+
+    padding: 38px 35px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-lg);
+
+    text-align: center;
+}
+
+
+/* Login title */
+
+.login-card h1 {
+    color: var(--forest);
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    margin-bottom: 5px;
+}
+
+
+/* Login subtitle */
+
+.login-card > p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    text-align: center;
+
+    margin-bottom: 5px;
+}
+
+
+/* Login form */
+
+.login-card form {
+    width: 100%;
+
+    margin: 25px auto 0;
+
+    text-align: left;
+}
+
+
+/* Student ID label */
+
+.login-card label {
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 8px;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-align: left;
+}
+
+
+/* Student ID input */
+
+.login-card input {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid var(--border-dark);
+
+    border-radius: 9px;
+
+    background: var(--white);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    text-align: center;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Input placeholder */
+
+.login-card input::placeholder {
+    color: #9aa69f;
+
+    text-align: center;
+}
+
+
+/* Input hover */
+
+.login-card input:hover {
+    border-color: #a8b9ae;
+}
+
+
+/* Input focus */
+
+.login-card input:focus {
+    border-color: var(--forest);
+
+    background: #fcfefd;
+
+    box-shadow:
+        0 0 0 4px rgba(31, 93, 66, 0.10);
+}
+
+
+/* Login button */
+
+.login-card button {
+    display: block;
+
+    width: 100%;
+
+    margin: 17px auto 0;
+
+    padding: 13px 15px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--forest);
+
+    color: var(--white);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.login-card button:hover {
+    background: var(--forest-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(31, 93, 66, 0.15);
+}
+
+
+.login-card button:active {
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+.login-card button:focus-visible {
+    outline: 3px solid rgba(31, 93, 66, 0.18);
+
+    outline-offset: 2px;
+}
+
+
+/* Error message */
+
+#errorMessage {
+    width: 100%;
+
+    margin: 12px auto 0;
+
+    padding: 9px 12px;
+
+    border-radius: 8px;
+
+    color: var(--danger);
+
+    background: var(--danger-light);
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* Hide empty error */
+
+#errorMessage:empty {
+    display: none;
+}
+
+
+/* =========================================================
+   LOGIN - MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .login-page {
+        padding: 20px 15px;
+    }
+
+    .login-container {
+        max-width: 400px;
+    }
+
+    .login-card {
+        padding: 32px 25px;
+    }
+
+    .login-card h1 {
+        font-size: 24px;
+    }
+
+    .login-card input {
+        padding: 12px 13px;
+    }
+
+    .login-card button {
+        padding: 12px 14px;
+    }
+}
+
+
+/* =========================================================
+   28. DISABLED VOTING STATE
+   ========================================================= */
+
+.voting-disabled {
+    opacity: 0.75;
+}
+
+.voting-disabled .candidate-card {
+    cursor: not-allowed;
+}
+
+.voting-disabled .candidate-card:hover {
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   29. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .voting-header {
+        grid-template-columns: 1fr auto;
+
+        gap: 16px;
+    }
+
+    .student-info {
+        border-left: none;
+
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+        padding-right: 16px;
+    }
+
+    .election-status {
+        grid-column: 1 / -1;
+
+        justify-self: stretch;
+
+        width: 100%;
+    }
+
+    .candidate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   30. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .voting-container {
+        width: min(100% - 20px, 600px);
+
+        margin: 15px auto;
+    }
+
+    .voting-header {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 22px 20px;
+    }
+
+    .voting-header h1 {
+        font-size: 24px;
+    }
+
+    .student-info {
+        align-items: center;
+
+        min-width: 0;
+
+        border: none;
+
+        padding: 5px;
+    }
+
+    .election-status {
+        justify-self: center;
+
+        width: auto;
+    }
+
+    .student-countdown-card {
+        padding: 18px;
+    }
+
+    .countdown-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .countdown-status-badge {
+        align-self: flex-start;
+    }
+
+    .countdown-time-grid {
+        gap: 3px;
+
+        padding: 14px 7px;
+    }
+
+    .countdown-unit strong {
+        font-size: 30px;
+    }
+
+    .countdown-separator {
+        font-size: 22px;
+    }
+
+    .countdown-schedule {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .schedule-item,
+    .schedule-item.schedule-end {
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .schedule-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .progress-container {
+        margin: 22px 0;
+
+        padding: 5px 0;
+    }
+
+    .progress-step {
+        width: 38px;
+        height: 38px;
+
+        font-size: 12px;
+    }
+
+    .progress-step span {
+        top: 46px;
+
+        width: 90px;
+
+        font-size: 9px;
+    }
+
+    .progress-line {
+        margin: 0 4px;
+    }
+
+    .position-card {
+        margin-top: 38px;
+    }
+
+    .position-header {
+        padding: 23px 20px 19px;
+    }
+
+    .position-header h2 {
+        font-size: 23px;
+    }
+
+    .candidate-grid {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+    .candidate-card {
+        display: grid;
+
+        grid-template-columns: 75px 1fr 32px;
+
+        align-items: center;
+
+        column-gap: 15px;
+
+        padding: 15px;
+    }
+
+    .candidate-photo {
+        width: 68px;
+        height: 68px;
+
+        margin: 0;
+
+        font-size: 30px;
+    }
+
+    .candidate-information {
+        text-align: left;
+    }
+
+    .candidate-information h3 {
+        font-size: 16px;
+    }
+
+    .candidate-information .platform {
+        min-height: auto;
+
+        margin-top: 7px;
+
+        padding-top: 7px;
+    }
+
+    .selection-circle {
+        width: 28px;
+        height: 28px;
+
+        margin: 0;
+    }
+
+    .review-section {
+        padding: 20px;
+    }
+
+    .review-item {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .review-item span {
+        text-align: left;
+    }
+
+    .selection-error {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .voting-navigation {
+        padding: 18px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   31. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        background: #f6f9f7;
+    }
+
+    .voting-container {
+        width: calc(100% - 14px);
+
+        margin: 7px auto;
+    }
+
+    .voting-header {
+        border-radius: 14px;
+
+        padding: 18px 15px;
+    }
+
+    .voting-header h1 {
+        font-size: 21px;
+    }
+
+    .voting-header > div:first-child p {
+        font-size: 12px;
+    }
+
+    .student-info strong {
+        font-size: 13px;
+    }
+
+    .student-info span {
+        font-size: 11px;
+    }
+
+    .election-status {
+        font-size: 10px;
+
+        padding: 7px 12px;
+    }
+
+    .student-countdown-card {
+        margin-top: 12px;
+
+        padding: 15px;
+
+        border-radius: 14px;
+    }
+
+    .countdown-eyebrow {
+        font-size: 9px;
+    }
+
+    .countdown-heading h2 {
+        font-size: 18px;
+    }
+
+    .countdown-time-grid {
+        padding: 13px 4px;
+
+        gap: 0;
+    }
+
+    .countdown-unit {
+        padding: 7px 2px;
+    }
+
+    .countdown-unit strong {
+        font-size: 23px;
+    }
+
+    .countdown-unit span {
+        margin-top: 5px;
+
+        font-size: 8px;
+    }
+
+    .countdown-separator {
+        padding-bottom: 13px;
+
+        font-size: 17px;
+    }
+
+    .countdown-schedule {
+        padding: 13px;
+    }
+
+    .schedule-item strong {
+        font-size: 11px;
+    }
+
+    .progress-container {
+        margin: 20px 0 22px;
+    }
+
+    .progress-step {
+        width: 34px;
+        height: 34px;
+
+        font-size: 11px;
+    }
+
+    .progress-step span {
+        top: 41px;
+
+        width: 72px;
+
+        font-size: 8px;
+    }
+
+    .progress-line {
+        height: 2px;
+
+        margin: 0 3px;
+    }
+
+    .position-card {
+        margin-top: 34px;
+
+        border-radius: 14px;
+    }
+
+    .position-header {
+        padding: 20px 16px 17px;
+    }
+
+    .position-number {
+        font-size: 9px;
+    }
+
+    .position-header h2 {
+        font-size: 21px;
+    }
+
+    .position-header p {
+        font-size: 12px;
+    }
+
+    .candidate-grid {
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+    .candidate-card {
+        grid-template-columns: 60px 1fr 28px;
+
+        column-gap: 11px;
+
+        padding: 12px;
+    }
+
+    .candidate-photo {
+        width: 58px;
+        height: 58px;
+
+        border-width: 3px;
+
+        font-size: 25px;
+    }
+
+    .candidate-information h3 {
+        font-size: 14px;
+    }
+
+    .candidate-information > p:not(.platform) {
+        font-size: 10px;
+    }
+
+    .candidate-information .platform {
+        font-size: 10px;
+
+        line-height: 1.4;
+    }
+
+    .selection-circle {
+        width: 25px;
+        height: 25px;
+
+        font-size: 12px;
+    }
+
+    .review-section {
+        padding: 15px;
+    }
+
+    .review-item {
+        padding: 13px 14px;
+    }
+
+    .review-item strong,
+    .review-item span {
+        font-size: 11px;
+    }
+
+    .voting-navigation {
+        padding: 15px;
+
+        gap: 10px;
+    }
+
+    .voting-navigation button {
+        flex: 1;
+
+        min-height: 42px;
+
+        padding: 9px 12px;
+
+        font-size: 12px;
+    }
+
+    .voting-footer {
+        padding-top: 15px;
+    }
+
+    .voting-footer p {
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   32. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    .countdown-unit strong {
+        font-size: 19px;
+    }
+
+    .countdown-unit span {
+        font-size: 7px;
+    }
+
+    .countdown-separator {
+        font-size: 14px;
+    }
+
+    .progress-step {
+        width: 30px;
+        height: 30px;
+    }
+
+    .progress-step span {
+        width: 65px;
+
+        font-size: 7px;
+    }
+
+    .candidate-card {
+        grid-template-columns: 50px 1fr 25px;
+
+        column-gap: 8px;
+
+        padding: 10px;
+    }
+
+    .candidate-photo {
+        width: 50px;
+        height: 50px;
+
+        font-size: 21px;
+    }
+
+    .candidate-information h3 {
+        font-size: 12px;
+    }
+
+    .candidate-information > p:not(.platform) {
+        font-size: 9px;
+    }
+
+    .candidate-information .platform {
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   33. ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+.candidate-card:focus-visible {
+    outline: 3px solid rgba(31, 93, 66, 0.25);
+
+    outline-offset: 2px;
+}
+
+
+/* Prevent text selection on interactive controls */
+
+.candidate-card,
+.voting-navigation button,
+.progress-step {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   34. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}
+
+
+/* =========================================================
+   35. PRINT
+   ========================================================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .voting-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .voting-header,
+    .student-countdown-card,
+    .progress-container,
+    .voting-footer {
+        box-shadow: none;
+    }
+
+    .voting-navigation {
+        display: none;
+    }
+
+/* =========================================================
+   COMPACT STUDENT VOTING LAYOUT
+   ========================================================= */
+
+/* Main student pages */
+body {
+    background: #f4f8f5;
+}
+
+/* =========================================================
+   LOGIN PAGE
+   ========================================================= */
+
+.voting-container {
+    width: 100%;
+    max-width: 760px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+
+/* Login / Student card */
+.student-login-card,
+.login-card,
+.voting-card {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+
+    padding: 30px 35px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8df;
+    border-radius: 16px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Header */
+.voting-header {
+    padding: 20px 10px 15px;
+
+    text-align: center;
+}
+
+.voting-header h1 {
+    margin-bottom: 5px;
+
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.voting-header p {
+    font-size: 13px;
+}
+
+
+/* Welcome text */
+.voting-container h2 {
+    margin-top: 8px;
+    margin-bottom: 5px;
+
+    font-size: 23px;
+
+    text-align: center;
+}
+
+.voting-container .subtitle,
+.voting-container .instruction {
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* Student ID area */
+.voting-container form {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 22px;
+}
+
+.voting-container label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.voting-container input[type="text"],
+.voting-container input[type="number"] {
+    width: 100%;
+    height: 45px;
+
+    padding: 0 14px;
+
+    border: 1px solid #cbd8d0;
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    text-align: center;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.voting-container input[type="text"]:focus,
+.voting-container input[type="number"]:focus {
+    border-color: #1f5d42;
+
+    box-shadow:
+        0 0 0 3px rgba(31, 93, 66, 0.10);
+}
+
+
+/* Continue button */
+.voting-container button {
+    width: 100%;
+    height: 44px;
+
+    margin-top: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #1f5d42;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.voting-container button:hover {
+    background: #174832;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ELECTION COUNTDOWN
+   ========================================================= */
+
+.election-countdown {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 20px auto 30px;
+    padding: 22px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8df;
+    border-radius: 16px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Countdown header */
+.election-countdown-header {
+    margin-bottom: 16px;
+}
+
+.election-countdown-header h2 {
+    margin: 0;
+
+    font-size: 20px;
+    color: #1f2933;
+}
+
+.election-countdown-header p {
+    margin-top: 4px;
+
+    font-size: 11px;
+    color: #71808a;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+
+/* Countdown numbers container */
+.countdown-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    padding: 18px;
+
+    background: #f3f8f5;
+
+    border: 1px solid #dce8df;
+    border-radius: 10px;
+}
+
+
+/* Individual countdown */
+.countdown-item {
+    text-align: center;
+
+    padding: 5px;
+}
+
+.countdown-number {
+    display: block;
+
+    color: #1f5d42;
+
+    font-size: 38px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+.countdown-label {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #66757f;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   VOTING SCHEDULE
+   ========================================================= */
+
+.voting-schedule {
+    margin-top: 15px;
+
+    padding: 14px 16px;
+
+    background: #fbfdfb;
+
+    border: 1px solid #dce8df;
+    border-radius: 9px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.schedule-item {
+    padding: 4px 10px;
+}
+
+.schedule-item:first-child {
+    border-right: 1px solid #dce8df;
+}
+
+.schedule-item span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #71808a;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+}
+
+.schedule-item strong {
+    color: #1f2933;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   VOTING PROGRESS
+   ========================================================= */
+
+.voting-progress {
+    margin-top: 16px;
+}
+
+.voting-progress-header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 6px;
+
+    color: #66757f;
+
+    font-size: 11px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+
+    overflow: hidden;
+
+    background: #e4ebe6;
+
+    border-radius: 10px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+
+    background: #1f5d42;
+
+    border-radius: 10px;
+}
+
+
+/* Countdown message */
+.countdown-message {
+    margin-top: 12px;
+
+    color: #71808a;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   OPEN / CLOSED STATUS
+   ========================================================= */
+
+.election-status {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 12px;
+
+    background: #e8f5ed;
+
+    color: #267044;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.election-status::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    background: #4d9b6b;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .voting-container {
+        margin: 20px auto;
+
+        padding: 0 12px;
+    }
+
+    .student-login-card,
+    .login-card,
+    .voting-card {
+        padding: 25px 20px;
+
+        border-radius: 12px;
+    }
+
+    .voting-header h1 {
+        font-size: 23px;
+    }
+
+    .voting-container h2 {
+        font-size: 20px;
+    }
+
+    .election-countdown {
+        padding: 18px 15px;
+
+        margin: 15px auto 20px;
+    }
+
+    .countdown-grid {
+        gap: 4px;
+
+        padding: 13px 8px;
+    }
+
+    .countdown-number {
+        font-size: 27px;
+    }
+
+    .countdown-label {
+        font-size: 8px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .countdown-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .countdown-number {
+        font-size: 30px;
+    }
+
+    .voting-schedule {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-item:first-child {
+        border-right: none;
+
+        border-bottom:
+            1px solid #dce8df;
+
+        padding-bottom: 10px;
+    }
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo-circle {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo-circle img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}
+
+
+
+
+}

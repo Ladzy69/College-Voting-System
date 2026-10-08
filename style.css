@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4fff4;
+    color: #263238;
+    min-height: 100vh;
+}
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #2e7d32;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1 {
+    color: #1b5e20;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #607d60;
+    font-size: 15px;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+
+    background: #81c784;
+
+    margin: 22px auto;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.instruction {
+    color: #607d60;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 2px solid #d6e6d6;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #2e7d32;
+
+    box-shadow:
+        0 0 0 3px rgba(46, 125, 50, 0.12);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2e7d32;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1b5e20;
+}
+
+button:focus {
+    outline: 3px solid #81c784;
+    outline-offset: 2px;
+}
+
+button:disabled {
+    background: #9eaf9e;
+    cursor: not-allowed;
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.error-message {
+    color: #c62828;
+
+    font-size: 14px;
+
+    margin-top: 8px;
+
+    min-height: 18px;
+}
+
+/* =========================
+   SECURITY MESSAGE
+========================= */
+
+.login-info {
+    margin-top: 25px;
+
+    padding: 12px;
+
+    background: #f1f8f1;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.login-info p {
+    font-size: 12px;
+    color: #546e54;
+}
+
+/* =========================
+   ADMIN LOGIN
+========================= */
+
+.admin-link {
+    margin-top: 25px;
+}
+
+.admin-link a {
+    color: #2e7d32;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.admin-link a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+}

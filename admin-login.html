@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login - College Voting System</title>
+
+    <link rel="stylesheet" href="admin-style.css">
+
+</head>
+
+<body>
+
+    <main class="admin-login-page">
+
+        <section class="admin-login-card">
+
+            <!-- LOGO -->
+
+            <div class="admin-login-logo">
+                🔐
+            </div>
+
+
+            <!-- TITLE -->
+
+            <h1>College Voting System</h1>
+
+            <p class="admin-login-subtitle">
+                Administrator Portal
+            </p>
+
+
+            <div class="admin-login-divider"></div>
+
+
+            <!-- LOGIN TITLE -->
+
+            <h2>Admin Login</h2>
+
+            <p class="admin-login-instruction">
+                Enter your administrator credentials to continue.
+            </p>
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="adminLoginForm">
+
+                <label for="adminUsername">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="adminUsername"
+                    name="adminUsername"
+                    placeholder="Enter admin username"
+                    autocomplete="off"
+                >
+
+
+                <label for="adminPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    name="adminPassword"
+                    placeholder="Enter admin password"
+                >
+
+
+                <p
+                    id="adminErrorMessage"
+                    class="admin-error-message">
+                </p>
+
+
+                <button
+                    type="submit"
+                    class="admin-login-button">
+
+                    Login
+
+                </button>
+
+            </form>
+
+
+            <!-- BACK TO STUDENT LOGIN -->
+
+            <div class="back-to-student">
+
+                <a href="index.html">
+                    ← Back to Student Login
+                </a>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="admin-login-footer">
+
+                🔒 Administrator access only.
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="admin-login.js"></script>
+
+</body>
+
+</html>

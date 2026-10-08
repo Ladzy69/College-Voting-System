@@ -1,0 +1,201 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notre Dame of Jolo College Voting System</title>
+
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+
+<body>
+
+    <main class="page-container">
+
+        <section class="login-card">
+
+            <!-- ==========================================
+                 LOGO
+            =========================================== -->
+
+            <div style="text-align: center;">
+
+                <img
+                    src="NDJC-SEAL-1508x1536.png"
+                    alt="Notre Dame of Jolo College Logo"
+                    style="
+                        width: 90px;
+                        height: 90px;
+                        object-fit: contain;
+                    "
+                >
+
+            </div>
+
+
+            <!-- ==========================================
+                 TITLE
+            =========================================== -->
+
+            <h1>
+                Notre Dame of Jolo College Voting System
+            </h1>
+
+            <p class="subtitle">
+                Student Election Portal
+            </p>
+
+            <div class="divider"></div>
+
+
+            <!-- ==========================================
+                 CREATE ACCOUNT
+            =========================================== -->
+
+            <h2>
+                Create Your Account
+            </h2>
+
+            <p class="instruction">
+                Enter your student information to register for the election.
+            </p>
+
+
+            <!-- ==========================================
+                 SIGN UP FORM
+            =========================================== -->
+
+            <form id="studentSignupForm">
+
+                <!-- STUDENT ID -->
+
+                <label for="signupStudentID">
+                    Student ID
+                </label>
+
+                <input
+                    type="text"
+                    id="signupStudentID"
+                    name="studentID"
+                    placeholder="Enter your 8-digit Student ID"
+                    inputmode="numeric"
+                    maxlength="8"
+                    autocomplete="off"
+                    required
+                >
+
+
+                <!-- FULL NAME -->
+
+                <label for="signupStudentName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="signupStudentName"
+                    name="studentName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+
+
+                <!-- PROGRAM -->
+
+                <label for="signupProgram">
+                    Program
+                </label>
+
+                <input
+                    type="text"
+                    id="signupProgram"
+                    name="program"
+                    placeholder="Example: BSIT"
+                    autocomplete="organization-title"
+                    required
+                >
+
+
+                <!-- YEAR LEVEL -->
+
+                <label for="signupYearLevel">
+                    Year Level
+                </label>
+
+                <input
+                    type="text"
+                    id="signupYearLevel"
+                    name="yearLevel"
+                    placeholder="Example: 2nd Year"
+                    autocomplete="off"
+                    required
+                >
+
+
+                <!-- MESSAGE -->
+
+                <p
+                    id="signupMessage"
+                    class="error-message"
+                ></p>
+
+
+                <!-- SIGN UP BUTTON -->
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Sign Up
+                </button>
+
+            </form>
+
+
+            <!-- ==========================================
+                 BACK TO LOGIN
+            =========================================== -->
+
+            <div class="signup-section">
+
+                <p>
+                    Already have an account?
+
+                    <a href="index.html">
+                        Back to Login
+                    </a>
+
+                </p>
+
+            </div>
+
+
+            <!-- ==========================================
+                 FOOTER
+            =========================================== -->
+
+            <div class="login-footer">
+
+                🔒 Your student information is secure and confidential.
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- STUDENT SIGNUP JAVASCRIPT -->
+
+    <script src="student-signup.js"></script>
+
+</body>
+
+</html>
+```
