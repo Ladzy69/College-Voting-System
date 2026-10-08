@@ -1,165 +1,193 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Notre Dame Of Jolo College Voting System</title>
+<title>Notre Dame Of Jolo College Voting System</title>
 
-    <link rel="stylesheet" href="style2.css">
+<link rel="stylesheet" href="style2.css">
+```
 
 </head>
 
 <body>
 
-    <main class="page-container">
+```
+<main class="page-container">
 
-        <section class="login-card">
-
-
-            <!-- ==========================================
-                 LOGO
-            =========================================== -->
-
-            <div style="text-align: center;">
-
-                <img
-                    src="NDJC-SEAL-1508x1536.png"
-                    alt="Notre Dame of Jolo College Logo"
-                    style="
-                        width: 90px;
-                        height: 90px;
-                        object-fit: contain;
-                    "
-                >
-
-            </div>
+    <section class="login-card">
 
 
-            <!-- ==========================================
-                 TITLE
-            =========================================== -->
+        <!-- ==========================================
+             LOGO
+        =========================================== -->
 
-            <h1>
-                Notre Dame of Jolo College Voting System
-            </h1>
+        <div style="text-align: center;">
 
-            <p class="subtitle">
-                Student Election Portal
-            </p>
-
-            <div class="divider"></div>
-
-
-            <!-- ==========================================
-                 LIVE ELECTION STATUS
-            =========================================== -->
-
-            <div
-                id="electionStatus"
+            <img
+                src="NDJC-SEAL-1508x1536.png"
+                alt="Notre Dame of Jolo College Logo"
                 style="
-                    text-align: center;
-                    margin-bottom: 20px;
+                    width: 90px;
+                    height: 90px;
+                    object-fit: contain;
                 "
             >
 
-                <strong>
-                    Checking voting schedule...
-                </strong>
-
-            </div>
+        </div>
 
 
-            <!-- ==========================================
-                 WELCOME
-            =========================================== -->
+        <!-- ==========================================
+             TITLE
+        =========================================== -->
 
-            <h2>
-                Welcome, Student!
-            </h2>
+        <h1>
+            Notre Dame of Jolo College Voting System
+        </h1>
 
-            <p class="instruction">
-                Enter your Student ID to begin voting.
+        <p class="subtitle">
+            Student Election Portal
+        </p>
+
+        <div class="divider"></div>
+
+
+        <!-- ==========================================
+             LIVE ELECTION STATUS
+        =========================================== -->
+
+        <div
+            id="electionStatus"
+            style="
+                text-align: center;
+                margin-bottom: 20px;
+            "
+        >
+
+            <strong>
+                Checking voting schedule...
+            </strong>
+
+        </div>
+
+
+        <!-- ==========================================
+             WELCOME
+        =========================================== -->
+
+        <h2>
+            Welcome, Student!
+        </h2>
+
+        <p class="instruction">
+            Enter your Student ID to begin voting.
+        </p>
+
+
+        <!-- ==========================================
+             LOGIN FORM
+        =========================================== -->
+
+        <form id="studentLoginForm">
+
+            <label for="studentID">
+                Student ID
+            </label>
+
+            <input
+                type="text"
+                id="studentID"
+                name="studentID"
+                placeholder="Enter your Student ID"
+                autocomplete="off"
+            >
+
+            <p
+                id="errorMessage"
+                class="error-message"
+            ></p>
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                Continue
+            </button>
+
+        </form>
+
+
+        <!-- ==========================================
+             SIGN UP
+        ========================================== -->
+
+        <div class="signup-section">
+
+            <p>
+
+                New student?
+
+                <a href="student-signup.html">
+                    Sign Up
+                </a>
+
             </p>
 
-
-            <!-- ==========================================
-                 LOGIN FORM
-            =========================================== -->
-
-            <form id="studentLoginForm">
-
-                <label for="studentID">
-                    Student ID
-                </label>
-
-                <input
-                    type="text"
-                    id="studentID"
-                    name="studentID"
-                    placeholder="Enter your Student ID"
-                    autocomplete="off"
-                >
-
-                <p
-                    id="errorMessage"
-                    class="error-message"
-                ></p>
-
-                <button
-                    type="submit"
-                    class="primary-button"
-                >
-                    Continue
-                </button>
-
-            </form>
+        </div>
 
 
-            <!-- ==========================================
-                 SIGN UP
-            =========================================== -->
+        <!-- ==========================================
+             ADMIN LOGIN
+        ========================================== -->
 
-            <div class="signup-section">
+        <div
+            class="admin-login-section"
+            style="
+                text-align: center;
+                margin-top: 18px;
+            "
+        >
 
-                <p>
+            <a
+                href="admin-login.html"
+                style="
+                    text-decoration: none;
+                    font-weight: 600;
+                "
+            >
+                🔐 Admin Login
+            </a>
 
-                    New student?
-
-                    <a href="student-signup.html">
-                        Sign Up
-                    </a>
-
-                </p>
-
-            </div>
-
-
-            <!-- ==========================================
-                 FOOTER
-            =========================================== -->
-
-            <div class="login-footer">
-
-                🔒 Your vote is confidential and secure.
-
-            </div>
-
-        </section>
-
-    </main>
+        </div>
 
 
-    <!-- ==========================================
-         STUDENT JAVASCRIPT
-    =========================================== -->
+        <!-- ==========================================
+             FOOTER
+        ========================================== -->
 
-    <script src="student2.js"></script>
+        <div class="login-footer">
+
+            🔒 Your vote is confidential and secure.
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ==========================================
+     STUDENT JAVASCRIPT
+=========================================== -->
+
+<script src="student2.js"></script>
+```
 
 </body>
 
 </html>
-
